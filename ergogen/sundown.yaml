@@ -1,3 +1,4 @@
+units:
 points:
   zones:
     fkeys:
@@ -5,34 +6,34 @@ points:
         esc:
         f1:
           key:
-            shift: [0.3u, 0]
+            shift: [0.3cx, 0]
         f2:
           key:
-            shift: [0.3u, 0]
+            shift: [0.3cx, 0]
         f3:
           key:
-            shift: [0.3u, 0]
+            shift: [0.3cx, 0]
         f4:
           key:
-            shift: [0.3u, 0]
+            shift: [0.3cx, 0]
         f5:
           key:
-            shift: [0.6u, 0]
+            shift: [0.6cx, 0]
         f6:
           key:
-            shift: [0.6u, 0]
+            shift: [0.6cx, 0]
       rows:
         f_row:
     matrix:
       anchor:
         ref: fkeys_esc_f_row
-        shift: [0.5U, -5u]
-      rotate: -10
+        shift: [0.5cx, -4.5cx]
+      rotate: -15
       columns:
         outer:
           key:
             width: 1.5
-            shift: [-0.25u, 0]
+            shift: [-0.25cx, 0]
         pinky:
           stagger: 2
         ring:
@@ -54,23 +55,23 @@ points:
         rotate:
           90
         shift:
-          [1u, -2.6u]
+          [1.05cx, -2.55cx]
       key:
         width: 1.5
       columns:
         one:
           key:
-            shift: [1.3u, 0]
+            shift: [1.3cx, 0]
         two:
           key:
-            shift: [1.8u, 0]
+            shift: [1.8cx, 0]
         three:
           key:
-            shift: [2.3u, 0]
+            shift: [2.3cx, 0]
         four:
           key:
             width: 1
-            shift: [2.55u, 0]
+            shift: [2.55cx, 0]
       rows:
         single:
     thumb:
@@ -79,15 +80,17 @@ points:
       columns:
         one:
           key:
-            shift: [-9.0, -20]
+            shift: [-0.5cx, -1.125cy]
             width: 2
         two:
           key:
-            shift: [-2.8U - 9, -20]
+            shift: [-3.375cx, -1.125cy]
             width: 1.5
   mirror:
     ref: fkeys_f6_f_row
     distance: U
+outlines:
+cases:
 pcbs:
   sunset:
     footprints:
