@@ -1,0 +1,97 @@
+points:
+  zones:
+    fkeys:
+      columns:
+        esc:
+        f1:
+          key:
+            shift: [0.3u, 0]
+        f2:
+          key:
+            shift: [0.3u, 0]
+        f3:
+          key:
+            shift: [0.3u, 0]
+        f4:
+          key:
+            shift: [0.3u, 0]
+        f5:
+          key:
+            shift: [0.6u, 0]
+        f6:
+          key:
+            shift: [0.6u, 0]
+      rows:
+        f_row:
+    matrix:
+      anchor:
+        ref: fkeys_esc_f_row
+        shift: [0.5U, -5u]
+      rotate: -10
+      columns:
+        outer:
+          key:
+            width: 1.5
+            shift: [-0.25u, 0]
+        pinky:
+          stagger: 2
+        ring:
+          stagger: 2
+        middle:
+          stagger: 4
+        index:
+          stagger: -2
+        inner:
+          stagger: -2
+      rows:
+        bottom:
+        home:
+        top:
+        number:
+    index_col:
+      anchor:
+        ref: matrix_inner_bottom
+        rotate:
+          90
+        shift:
+          [1u, -2.6u]
+      key:
+        width: 1.5
+      columns:
+        one:
+          key:
+            shift: [1.3u, 0]
+        two:
+          key:
+            shift: [1.8u, 0]
+        three:
+          key:
+            shift: [2.3u, 0]
+        four:
+          key:
+            width: 1
+            shift: [2.55u, 0]
+      rows:
+        single:
+    thumb:
+      anchor:
+        ref: [matrix_inner_bottom]
+      columns:
+        one:
+          key:
+            shift: [-9.0, -20]
+            width: 2
+        two:
+          key:
+            shift: [-2.8U - 9, -20]
+            width: 1.5
+  mirror:
+    ref: fkeys_f6_f_row
+    distance: U
+pcbs:
+  sunset:
+    footprints:
+      - type: promicro
+        anchor:
+          - ref: [matrix_inner_top, mirror_matrix_inner_top]
+            shift: [0, 22]

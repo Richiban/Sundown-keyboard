@@ -8,5 +8,6 @@ A custom keyboard with the following features:
 * White per-key lighting
 * Two rotary encoders
 * OLED display (note that currently OLED support in QMK is experimental)
+* Roughly 70% lyaout with number row and function keys
 
 ![Main layout](layout.png)
