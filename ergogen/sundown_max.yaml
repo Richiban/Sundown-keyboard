@@ -1,0 +1,159 @@
+units:
+  h: cy
+  w: cx
+  px: 2
+  py: 2
+points:
+  key:
+    footprints:
+      choc_hotswap:
+        type: choc
+        nets:
+          from: =name
+          to: GND
+        params:
+          keycaps: true
+          reverse: true
+          hotswap: true
+      diode:
+        type: diode
+        nets:
+          from: =name
+          to: GND
+        anchor:
+          shift: [0, -5]
+
+  mirror:
+    ref: fkeys2_f6_f_row2
+    distance: U
+  zones:
+    esckey:
+      columns:
+        esc:
+          key:
+            width: 1.25
+      rows:
+        esc_row:
+    fkeys1:
+      anchor:
+        ref: esckey_esc_esc_row
+        shift: [1.35w, 0]
+      columns:
+        f1:
+        f2:
+        f3:
+        f4:
+      rows:
+        f_row1:
+    fkeys2:
+      anchor:
+        ref: fkeys1_f4_f_row1
+        shift: [1.25w, 0]
+      columns:
+        f5:
+        f6:
+      rows:
+        f_row2:
+    matrix:
+      anchor:
+        ref: esckey_esc_esc_row
+        shift: [0.5w, -4.5w]
+      rotate: -15
+      columns:
+        outer:
+          key:
+            width: 1.25
+            shift: [-0.125w, 0]
+        pinky:
+          stagger: 2
+        ring:
+          stagger: 2
+        middle:
+          stagger: 4
+        index:
+          stagger: -2
+        inner:
+          stagger: -2
+      rows:
+        bottom:
+        home:
+        top:
+        number:
+    index_col:
+      anchor:
+        ref: matrix_inner_top
+        rotate:
+          90
+        shift:
+          [1.05w, -3.225w]
+      key:
+        width: 1.25
+      columns:
+        one:
+          key:
+            shift: [0.0w, 0]
+        two:
+          key:
+            shift: [0.25w, 0]
+        three:
+          key:
+            shift: [0.5w, 0]
+        four:
+          key:
+            shift: [0.75w, 0]
+      rows:
+        single:
+    thumb:
+      anchor:
+        ref: [matrix_inner_bottom]
+        shift: [-0.125w, -1.125h]
+      columns:
+        one:
+          key:
+            width: 1.25
+        two:
+          key:
+            shift: [-2.5w, 0]
+            footprints:
+              rotary:
+      rows.thumb_row:
+
+outlines:
+  exports:
+    plate:
+      - type: keys
+        side: both
+        size: 18 + 2 * (1 + 8)
+        bevel: 5
+      - type: polygon
+        #operation: stack
+        points:
+          - ref: esckey_esc_esc_row
+          - ref: mirror_esckey_esc_esc_row
+          - ref: mirror_index_col_one_single
+            shift: [-0.75w, -1w]
+          - ref: index_col_one_single
+            shift: [-0.75w, -1w]
+    filleted:
+      - type: outline
+        name: plate
+        fillet: 4
+    top_plate:
+      - filleted
+      - type: keys
+        side: both
+        size: [w, h]
+        operation: subtract
+# cases:
+pcbs.sundown_max:
+  outlines.edge:
+    outline: filleted
+    layer: Edge.Cuts
+  footprints.mcu:
+    type: promicro
+    anchor:
+      ref:
+        - fkeys2_f6_f_row2
+        - mirror_fkeys2_f6_f_row2
+      shift: [0, -2h]
+      rotate: -90
