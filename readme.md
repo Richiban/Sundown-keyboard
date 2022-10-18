@@ -7,7 +7,7 @@ A custom keyboard with the following features:
 - Unsplit body design
 - Wireless (Bluetooth) and USB-C
 - White per-key lighting
-- Two rotary encoders
+- 72 keys, two rotary encoders
 - OLED display (note that currently OLED support in QMK is experimental)
 - Roughly 70% lyaout with number row and function keys
 
@@ -35,15 +35,17 @@ A custom keyboard with the following features:
 
 * Main PCB
 * USB-C internal extension cable
-* Switches
-* Keycaps
+* Switches: x72
+* Keycaps:
+    * 1U x52
+    * 1.25U x20
 * Nice!nano
 * Diodes
-* Hotswap sockets
+* LEDs: x72
+* Hotswap sockets: x72
 * Screws
 * Standoffs
-* Mid case
-* Bottom case
+* Bottom plate
 * Low-profile encoders x2
 * Low-profile encoder knobs x2
 
