@@ -22,6 +22,8 @@ A custom keyboard with the following features:
 - [ ] Place screw holes etc in design
 - [ ] Generate Kicad file with routing
 - [ ] Leave a hole in the PCB for the battery
+- [ ] Place on/off switch on PCB
+- [ ] Place reset switch on PCB
 
 ## Variants
 

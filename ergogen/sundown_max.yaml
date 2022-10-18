@@ -3,6 +3,7 @@ units:
   w: cx
   px: 2
   py: 2
+  fillet: 3
 points:
   key:
     footprints:
@@ -22,7 +23,11 @@ points:
           to: GND
         anchor:
           shift: [0, -5]
-
+      led:
+        type: rgb
+        nets:
+          din: =name
+          dout: GND
   mirror:
     ref: fkeys2_f6_f_row2
     distance: U
@@ -115,7 +120,15 @@ points:
           key:
             shift: [-2.5w, 0]
             footprints:
-              rotary:
+              clear:
+              encoder:
+                type: rotary
+                nets:
+                  from: =name
+                  to: GND
+                  A: =name
+                  B: =name
+                  C: =name
       rows.thumb_row:
 
 outlines:
@@ -131,9 +144,9 @@ outlines:
           - ref: esckey_esc_esc_row
           - ref: mirror_esckey_esc_esc_row
           - ref: mirror_index_col_one_single
-            shift: [-0.75w, -1w]
+            shift: [-16, -10]
           - ref: index_col_one_single
-            shift: [-0.75w, -1w]
+            shift: [-16, -10]
     filleted:
       - type: outline
         name: plate
@@ -149,11 +162,45 @@ pcbs.sundown_max:
   outlines.edge:
     outline: filleted
     layer: Edge.Cuts
-  footprints.mcu:
-    type: promicro
-    anchor:
-      ref:
-        - fkeys2_f6_f_row2
-        - mirror_fkeys2_f6_f_row2
-      shift: [0, -2h]
-      rotate: -90
+  footprints:
+    mcu:
+      type: promicro
+      anchor:
+        ref:
+          - fkeys2_f6_f_row2
+          - mirror_fkeys2_f6_f_row2
+        shift: [0, -2h]
+        rotate: -90
+    screen:
+      type: oled
+      nets:
+        SDA: =name
+        SCL: GND
+      anchor:
+        ref:
+          - matrix_inner_bottom
+          - mirror_matrix_inner_bottom
+        rotate: -90
+    power_switch:
+      type: slider
+      nets:
+        from: =name
+        to: GND
+      anchor:
+        ref:
+          - matrix_inner_bottom
+          - mirror_matrix_inner_bottom
+        shift: [0, -41]
+        rotate: 180
+    reset_button:
+      type: button
+      anchor:
+        ref:
+          - matrix_inner_bottom
+        shift: [17, 0]
+        rotate: 270
+      params:
+        variant: 2_pin_th
+      nets:
+        from: GND
+        to: RST
