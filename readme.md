@@ -16,13 +16,13 @@ A custom keyboard with the following features:
 ## TODO
 
 - [x] Fix overlapping keys in Ergogen points
-- [ ] Encoders in Ergogen for inner thumb keys
+- [x] Encoders in Ergogen for inner thumb keys
 - [x] Overlays in Ergogen
 - [x] PCBs in Ergogen
 - [ ] Place screw holes etc in design
 - [ ] Generate Kicad file with routing
 - [ ] Leave a hole in the PCB for the battery
-- [ ] Place on/off switch on PCB
+- [x] Place on/off switch on PCB
 - [ ] Place reset switch on PCB
 
 ## Variants

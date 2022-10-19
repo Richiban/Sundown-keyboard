@@ -120,7 +120,9 @@ points:
           key:
             shift: [-2.5w, 0]
             footprints:
-              clear:
+              choc_hotswap: $unset
+              diode: $unset
+              led: $unset
               encoder:
                 type: rotary
                 nets:
@@ -184,8 +186,8 @@ pcbs.sundown_max:
     power_switch:
       type: slider
       nets:
-        from: =name
-        to: GND
+        to: Bplus
+        from: BAT
       anchor:
         ref:
           - matrix_inner_bottom
